@@ -890,7 +890,12 @@ gtag('config', 'AW-619144921');
                             var confidence = document.getElementById("confidence");
                             confidence.innerHTML = "Bad Data. Please try again with data that meets specification";
                           }
-                      }
+                          else if (n === 4) {
+                            var confidence = document.getElementById("confidence");
+                            confidence.innerHTML = "No Diseases: 94.23% Confidence Interval";
+                          }
+
+                        }
                       reader.readAsText(fileUpload.files[0]);
                   } else {
                       alert("This browser does not support HTML5.");
