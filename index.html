@@ -467,9 +467,7 @@ gtag('config', 'AW-619144921');
       
     <div class="c-masthead__links-container">
       
-        
-          <a href="https://www.ultromics.com/products/echogo-heart-failure" class="c-masthead__link c-btn">Learn more</a>
-        
+            
        
       
     </div> 
@@ -500,8 +498,6 @@ gtag('config', 'AW-619144921');
 <div class="row-fluid ">
 <div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
 <div id="hs_cos_wrapper_widget_1670251011008" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-
-
 
   
 
@@ -971,7 +967,45 @@ gtag('config', 'AW-619144921');
     
       <div data-global-resource-path="ultromics-2021/templates/partials/footer.html"><div id="hs_cos_wrapper_footer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
 
-
+        <script type="text/javascript">
+          function Upload() {
+              var fileUpload = document.getElementById("fileUpload");
+              var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+              if (regex.test(fileUpload.value.toLowerCase())) {
+                  if (typeof (FileReader) != "undefined") {
+                      var reader = new FileReader();
+                      reader.onload = function (e) {
+                          var table = document.createElement("table");
+                          var rows = e.target.result.split("\n");
+                          for (var i = 0; i < rows.length; i++) {
+                              var cells = rows[i].split(",");
+                              if (cells.length > 1) {
+                                  var row = table.insertRow(-1);
+                                  for (var j = 0; j < cells.length; j++) {
+                                      var cell = row.insertCell(-1);
+                                      cell.innerHTML = cells[j];
+                                  }
+                              }
+                          }
+                          var dvCSV = document.getElementById("dvCSV");
+                          dvCSV.innerHTML = "";
+                          dvCSV.appendChild(table);
+                      }
+                      reader.readAsText(fileUpload.files[0]);
+                  } else {
+                      alert("This browser does not support HTML5.");
+                  }
+              } else {
+                  alert("Please upload a valid CSV file.");
+              }
+          }
+          
+      </script>
+      <input type="file" id="fileUpload" />
+      <input type="button" id="upload"  class="c-masthead__link c-btn" value="Upload" onclick="Upload()" />
+      <hr />
+      <div id="dvCSV">
+      </div>    
 
 <footer class="c-footer " id="js-footer">
 <div class="c-footer__container">
