@@ -8,7 +8,11 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
+<<<<<<< HEAD
             "file": "c:\\Users\\Khalsa\\Documents\\GitHub\\HackTJ23\\index.html"
+=======
+            "file": "c:\\Users\\kylos\\Documents\\GitHub\\HackTJ23\\index.html"
+>>>>>>> c03dd09c85304e0b9ce14c3223338ba1c2c4201c
         }
     ]
 }
