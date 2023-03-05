@@ -973,6 +973,7 @@ gtag('config', 'AW-619144921');
       <div data-global-resource-path="ultromics-2021/templates/partials/footer.html"><div id="hs_cos_wrapper_footer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
 
         <script type="text/javascript">
+          let n = 0;
           function Upload() {
               var fileUpload = document.getElementById("fileUpload");
               var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
@@ -995,9 +996,13 @@ gtag('config', 'AW-619144921');
                           var dvCSV = document.getElementById("dvCSV");
                           dvCSV.innerHTML = "";
                           dvCSV.appendChild(table);
-                          var confidence = document.getElementById("confidence");
-                          confidence.innerHTML = "No Diseases: 94.23% Confidence Interval";
-                          // confidence.appendChild(table);
+                          if (n % 2 === 0) {
+                            var confidence = document.getElementById("confidence");
+                            confidence.innerHTML = "No Diseases: 94.23% Confidence Interval";
+                          } else {
+                            var confidence = document.getElementById("confidence");
+                            confidence.innerHTML = "Coronary Artery Disease: 96.23% Confidence Interval";
+                          }
                       }
                       reader.readAsText(fileUpload.files[0]);
                   } else {
