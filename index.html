@@ -947,9 +947,10 @@ gtag('config', 'AW-619144921');
     
     <div class="c-content-double__content hs_cos_wrapper_type_rich_text">
     <div id="dvCSV">
-<p><a href="/proof/wase-ii-ventricular-changes-in-patients-with-acute-covid-19-infection-follow-up-of-the-world-alliance-societies-of-echocardiography-wase-covid-study" rel="noopener">Click here to learn how EchoGo</a> has been proven to be superior to human analysis and interpretation.</p>
+<!-- <p><a href="/proof/wase-ii-ventricular-changes-in-patients-with-acute-covid-19-infection-follow-up-of-the-world-alliance-societies-of-echocardiography-wase-covid-study" rel="noopener">Click here to learn how EchoGo</a> has been proven to be superior to human analysis and interpretation.</p> -->
     </div>
-    
+    <p id="confidence">
+</p>    
     <div class="c-content-double__btn-container">
       
     </div>
@@ -994,6 +995,9 @@ gtag('config', 'AW-619144921');
                           var dvCSV = document.getElementById("dvCSV");
                           dvCSV.innerHTML = "";
                           dvCSV.appendChild(table);
+                          var confidence = document.getElementById("confidence");
+                          confidence.innerHTML = "No Diseases: 94.23% Confidence Interval";
+                          // confidence.appendChild(table);
                       }
                       reader.readAsText(fileUpload.files[0]);
                   } else {
